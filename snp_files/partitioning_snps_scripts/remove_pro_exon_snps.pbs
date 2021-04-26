@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+###Jordan Hughey
+###Liu Lab
+#PBS -l walltime=7:00:00
+#PBS -l nodes=1:ppn=1
+###PBS -A dxl46_b_g_bc_default
+#PBS -A open
+#PBS -l pmem=20g
+
+module load r/3.4
+module load python/2.7.14-anaconda5.0.1
+
+rsid=${rsid}
+out=${out}
+snp_annot=${snp_annot}
+
+#echo "qsub -d /storage/home/jmh791/group/default/private/jordan/PredictDBPipeline/GTEx_train  -N filt_chr${chr} -v vcf='./vcf_by_chr/GTEx_V7_genotype_vcf_tab.chr${chr}',out='GTEx_V7_genotype_vcf_tab.chr${chr}' filter_vcf_maf_hwe.pbs"
+#echo 'qsub -d /storage/home/jmh791/group/default/private/jordan/PredictDBPipeline/GTEx_train -N add_rsid_${i} -v rsid="/storage/home/jmh791/group/default/private/jordan/vcf_by_chr/00-All_112315.vcf_nocomments.firstfields.chr${i}",snp_annot="./snp_annot_files/GTEx_V7_snp_annot_pre_chr${i}.txt",out="GTEx_V7_snp_annot_pre_chr${i}_rsid.txt" add_rsid.pbs'
+#echo "job name: add_rsid_chr"
+
+python remove_pro_exon_snps.py ${rsid} ${snp_annot} ${out}

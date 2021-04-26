@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+###Jordan Hughey
+###Liu Lab
+#PBS -l walltime=14:00:00
+#PBS -l nodes=1:ppn=1
+###PBS -A dxl46_b_g_bc_default
+#PBS -A open
+#PBS -l pmem=30g
+
+module load r/3.4
+module load python/2.7.14-anaconda5.0.1
+
+out=${out}
+snp_annot=${snp_annot}
+
+
+python separate_wb_snp_beds.py ${snp_annot} ${out}
+

@@ -10,7 +10,7 @@ Activity and Contact pipeline for picking snp-gene pairs.  This pipeline is used
 <!-- GETTING STARTED -->
 ## Prerequisites
 
-To run, [bedtools](https://bedtools.readthedocs.io/en/latest/), [parallel](https://www.gnu.org/software/parallel/), [SUBREAD](http://subread.sourceforge.net/), and [Python2.7](https://repo.anaconda.com/archive/) 
+To run, [bedtools](https://bedtools.readthedocs.io/en/latest/), [parallel](https://www.gnu.org/software/parallel/), [SUBREAD](http://subread.sourceforge.net/), and [Python2.7](https://repo.anaconda.com/archive/) are REQUIRED 
 
 Also, you need [R](https://www.r-project.org/) with the following packages:
 

@@ -9,6 +9,8 @@ ARGUMENT_LIST=(
     "tissue"
     "window"
     "cutoff"
+    "dnase"
+    "histone"
 )
 
 # read arguments
@@ -48,6 +50,16 @@ while [[ $# -gt 0 ]]; do
             shift 2
             ;;
 
+        --dnase)
+            window=$2
+            shift 2
+            ;;
+
+        --histone)
+            cutoff=$2
+            shift 2
+            ;;
+
         *)
             break
             ;;
@@ -60,7 +72,8 @@ res_short=${resolution_short}
 tiss=${tissue}
 window=${window}
 cutoff=${cutoff}
-
+dnase=${dnase}
+histone=${histone}
 
 #Create saf format from gene intersect hic
 mkdir intermediate_files/${tiss}_saf_files_${window}
@@ -92,8 +105,10 @@ mkdir activity_scripts/intermediate
 
 saf=intermediate_files/${tiss}_saf_files_${window}/${tiss}_snp_gene_pairs_bins_${window}.chr
 out=${tiss}_activity_${window}_chr
-hrep1=Spleen_ENCFF407QBM_H3K27ac.bam
-drep1=Spleen_ENCFF039NMI_DNase.bam
+#hrep1=Spleen_ENCFF407QBM_H3K27ac.bam
+#drep1=Spleen_ENCFF039NMI_DNase.bam
+hrep1=${histone}
+drep1=${dnase}
 
 #first script gets rpms from histone bam files for saf positions
 parallel bash ./activity_scripts/activity_histone_processing_1r.sh -a ${hrep1} -p ${saf}{}.saf -c ${tiss} -o ${out}{}.txt ::: {20..22}

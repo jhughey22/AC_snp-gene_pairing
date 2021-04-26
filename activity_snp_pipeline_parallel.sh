@@ -13,6 +13,8 @@ ARGUMENT_LIST=(
     "tissue"
     "window"
     "cutoff"
+    "dnase"
+    "histone"
 )
 
 # read arguments
@@ -52,6 +54,16 @@ while [[ $# -gt 0 ]]; do
             shift 2
             ;;
 
+        --dnase)
+            window=$2
+            shift 2
+            ;;
+
+        --histone)
+            cutoff=$2
+            shift 2
+            ;;
+
         *)
             break
             ;;
@@ -66,9 +78,11 @@ res_short=${resolution_short}
 tiss=${tissue}
 window=${window}
 cutoff=${cutoff}
+dnase=${dnase}
+histone=${histone}
 
 wd=`pwd`
  
-qsub -v res=${res},res_short=${res_short},tiss=${tiss},window=${window},cutoff=${cutoff} -d ${wd} -N Sig_act_${tiss} ./scripts/activity_snp_pipeline.pbs
+qsub -v res=${res},res_short=${res_short},tiss=${tiss},window=${window},cutoff=${cutoff},dnase=${dnase},histone=${histone} -d ${wd} -N Sig_act_${tiss} ./scripts/activity_snp_pipeline.pbs
 #qsub -v res=${r},tissue=${t},window=${w},cutoff=${c} -d ${wd} -N Sig_act_${t} activity_snp_pipeline_v2.pbs
 

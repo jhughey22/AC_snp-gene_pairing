@@ -4,7 +4,7 @@
 Activity and Contact pipeline for picking snp-gene pairs.  This pipeline is used by the [ExPLACE](https://github.com/jhughey22/ExPLACE) method. ExPLACE (**Ex**pression **P**rediction **L**everaging **A**ctivity and **C**ontact **E**vidence) is an integrative method that uses chromatin conformation data and enhancer activity marks to choose the genetic variants used for predicting gene expression.  Ultimately, this tool creates biologically informed gene expression prediction models for transcriptome-wide association studies. 
 
 <p align="center">
-   <img src="https://github.com/jhughey22/ExPLACE/raw/main/image/single_tissue_ExPLACE_approach.png" width="734" height="300.7">
+   <img src="https://github.com/jhughey22/AC_snp-gene_pairing/raw/main/image/activity_contact_approach.png" width="734" height="300.7">
 </p>
 
 <!-- GETTING STARTED -->
@@ -23,7 +23,8 @@ This pipeline uses 4 main inputs that may require preprocessing to the formats b
 
 1) Hi-C contact frequency matrix - Contact frequency map as a tab delimited file.  These files should be separated by chromosome and contain the normalized frequencies only.  No row or column IDs for bin positions (these are taken into account later). Example below
 
-
+|         |         |         |         |
+| :-----: | ------- | ------- | ------  |
 |  2.2340 | 0.2075  | 0.4046  | 0.1951  | 
 |  1.2241 | 0.0134  | 10.047  | 0.667   | 
 |  0.3389 | 0.0269  | 9.8065  | 0.577   |
@@ -36,6 +37,8 @@ This pipeline uses 4 main inputs that may require preprocessing to the formats b
 
 SNP files will need to separated by chromosome.  Also, two files will be created based off intergenic SNPs or exonic SNPs.  The format is as follows:
 
+|        |          |          |                     |
+| :----: | -------- | -------- | ------------------  |
 |  chr22 | 16051249 | 16051250 | 22_16051249_T_C_b37 |
 |  chr22 | 16053730 | 16053731 | 22_16053730_C_A_b37 |
 |  chr22 | 16053758 | 16053759 | 22_16053758_G_A_b37 |

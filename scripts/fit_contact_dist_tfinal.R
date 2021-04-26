@@ -55,7 +55,7 @@ for (i in 1:length(distances)) {
   print(nrow(subset(hic_hmag_dist, hic_hmag_dist$c_pvalue > 0.05)))
   pvals <- hic_hmag_dist$c_pvalue
   #qvals <- qvalue(p = pvals)
-  qvals <- tryCatch(qvalue(p = pvals), error = function(cond) {message('Error'); message(geterrmessage()); list()})
+  qvals <- tryCatch(qvalue(p = pvals), error = function(cond) {message('tryCatch - Warning'); message(geterrmessage()); list()})
   if (length(qvals) > 0) {
     hic_hmag_dist$c_qvalue <- qvals$qvalues
     print(nrow(subset(hic_hmag_dist, hic_hmag_dist$c_qvalue <= 0.01)))

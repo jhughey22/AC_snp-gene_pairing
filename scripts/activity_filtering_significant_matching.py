@@ -27,7 +27,7 @@ with open(activity) as f:
     for line in inlines:
         #split each line into list based off tab delimeter
         line_list = line.strip().split("\t")
-        if line_list[0] == 'Geneid':
+        if line_list[0] == 'Geneid' or line_list[0] == 'Chr':
             continue
         pos = '%s_%s'%(line_list[2],line_list[3])
         if pos not in activity_dict:

@@ -45,7 +45,7 @@ print(nrow(subset(hic_hmag, hic_hmag$his_pvalue <= 0.05)))
 print(nrow(subset(hic_hmag, hic_hmag$his_pvalue > 0.05)))
 pvals <- hic_hmag$his_pvalue
 #qvals <- qvalue(p = pvals)
-qvals <- tryCatch(qvalue(p = pvals), error = function(cond) {message('Error'); message(geterrmessage()); list()})
+qvals <- tryCatch(qvalue(p = pvals), error = function(cond) {message('tryCatch - Warning'); message(geterrmessage()); list()})
 if (length(qvals) > 0) {
   hic_hmag$his_qvalue <- qvals$qvalues
   print(nrow(subset(hic_hmag, hic_hmag$his_qvalue <= 0.05)))
@@ -77,7 +77,7 @@ print(nrow(subset(hic_hmag, hic_hmag$dnase_pvalue > 0.05)))
 pvals <- hic_hmag$dnase_pvalue
 
 #qvals <- qvalue(p = pvals)
-qvals <- tryCatch(qvalue(p = pvals), error = function(cond) {message('Error'); message(geterrmessage()); list()})
+qvals <- tryCatch(qvalue(p = pvals), error = function(cond) {message('tryCatch - Warning'); message(geterrmessage()); list()})
 if (length(qvals) > 0) {
 	hic_hmag$dnase_qvalue <- qvals$qvalues
 	print(nrow(subset(hic_hmag, hic_hmag$dnase_qvalue <= 0.05)))

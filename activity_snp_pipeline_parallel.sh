@@ -55,12 +55,12 @@ while [[ $# -gt 0 ]]; do
             ;;
 
         --dnase)
-            window=$2
+            dnase=$2
             shift 2
             ;;
 
         --histone)
-            cutoff=$2
+            histone=$2
             shift 2
             ;;
 

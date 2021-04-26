@@ -4,7 +4,7 @@
 Activity and Contact pipeline for picking snp-gene pairs.  This pipeline is used by the [ExPLACE](https://github.com/jhughey22/ExPLACE) method. ExPLACE (**Ex**pression **P**rediction **L**everaging **A**ctivity and **C**ontact **E**vidence) is an integrative method that uses chromatin conformation data and enhancer activity marks to choose the genetic variants used for predicting gene expression.  Ultimately, this tool creates biologically informed gene expression prediction models for transcriptome-wide association studies. 
 
 <p align="center">
-   <img src="https://github.com/jhughey22/AC_snp-gene_pairing/raw/main/image/activity_contact_approach.png" width="734" height="300.7">
+   <img src="https://github.com/jhughey22/AC_snp-gene_pairing/raw/main/image/activity_contact_approach.png" width="484" height="300.7">
 </p>
 
 <!-- GETTING STARTED -->

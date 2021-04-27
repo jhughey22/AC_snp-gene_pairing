@@ -18,7 +18,8 @@ hmag_file <- args[1]
 scz_file <- args[2]
 
 
-hic_hmag <- read.table(hmag_file, header = TRUE, row.names = 'Geneid', stringsAsFactors = FALSE)
+#hic_hmag <- read.table(hmag_file, header = TRUE, row.names = 'Geneid', stringsAsFactors = FALSE)
+hic_hmag <- read.table(hmag_file, header = TRUE, stringsAsFactors = FALSE)
 hic_scz <- read.table(scz_file, header = TRUE, stringsAsFactors = FALSE)
 
 
